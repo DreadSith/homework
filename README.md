@@ -5,7 +5,7 @@ A private blog using Sping Boot, Spring Security, Spring JPA, Thymeleaf, and h2 
 Includes a .jar file and a .bat file to run it. 
 
 To log onto blog use
-username: Kristīne
+username: Kristīne,
 password: admin
 
 h2 db data source: spring.datasource.url=jdbc:h2:~/testdb
