@@ -19,10 +19,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     	http
 		.authorizeRequests()
 			.antMatchers("/login.html").permitAll()
-			.anyRequest().authenticated()
-			.and()
-		.authorizeRequests()	
 			.antMatchers("/h2-console/**").permitAll()
+			.anyRequest().authenticated()
 			.and().csrf().ignoringAntMatchers("/h2-console/**")
 			.and().headers().frameOptions().sameOrigin()
 			.and()
@@ -30,9 +28,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.loginPage("/login.html")
 			.failureForwardUrl("/login-error.html")
 			.and()
-		.logout()
+		.logout().clearAuthentication(true)
 			.logoutUrl("/logout")
 			.logoutSuccessUrl("/login.html")
+			.and().csrf().ignoringAntMatchers("/logout")
+			.and().csrf().ignoringAntMatchers("/delete/**")
 			.and()
 		.httpBasic();   
     }
