@@ -10,7 +10,7 @@ password: admin
 
 h2 db data source: spring.datasource.url=jdbc:h2:~/testdb
 
-Database gets creates when you launch the program, or updates the existing database if one exists.
+Database gets created when you launch the program, or updates the existing database if one exists.
 
 ReadMe will be updated when additional dependencies are added or removed.
 
