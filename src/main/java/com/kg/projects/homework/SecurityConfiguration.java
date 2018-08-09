@@ -33,6 +33,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.logoutSuccessUrl("/login.html")
 			.and().csrf().ignoringAntMatchers("/logout")
 			.and().csrf().ignoringAntMatchers("/delete/**")
+			.and().csrf().ignoringAntMatchers("/edit/**")
+			.and().csrf().ignoringAntMatchers("/update/**")
+			.and().csrf().ignoringAntMatchers("/new/**")
+			.and().csrf().ignoringAntMatchers("/create/**")
 			.and()
 		.httpBasic();   
     }
