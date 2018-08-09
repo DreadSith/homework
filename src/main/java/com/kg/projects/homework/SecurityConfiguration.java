@@ -23,6 +23,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.anyRequest().authenticated()
 			.and().csrf().ignoringAntMatchers("/h2-console/**")
 			.and().headers().frameOptions().sameOrigin()
+			.and().csrf().ignoringAntMatchers("/logout")
+			.and().csrf().ignoringAntMatchers("/delete/**")
+			.and().csrf().ignoringAntMatchers("/edit/**")
+			.and().csrf().ignoringAntMatchers("/update/**")
+			.and().csrf().ignoringAntMatchers("/new/**")
+			.and().csrf().ignoringAntMatchers("/create/**")
 			.and()
 		.formLogin()
 			.loginPage("/login.html")
@@ -31,12 +37,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		.logout().clearAuthentication(true)
 			.logoutUrl("/logout")
 			.logoutSuccessUrl("/login.html")
-			.and().csrf().ignoringAntMatchers("/logout")
-			.and().csrf().ignoringAntMatchers("/delete/**")
-			.and().csrf().ignoringAntMatchers("/edit/**")
-			.and().csrf().ignoringAntMatchers("/update/**")
-			.and().csrf().ignoringAntMatchers("/new/**")
-			.and().csrf().ignoringAntMatchers("/create/**")
 			.and()
 		.httpBasic();   
     }
@@ -47,7 +47,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         auth.inMemoryAuthentication()
         		.passwordEncoder(NoOpPasswordEncoder.getInstance())
-                .withUser("DreadSith").password("dreadme").roles("USER");
+                .withUser("Kristīne").password("admin").roles("USER");
     }
 
 }

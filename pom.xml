@@ -67,6 +67,22 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>1.5.2.RELEASE</version>
+				<executions>
+					<execution>
+					<goals>
+					<goal>repackage</goal>
+					</goals>
+				</execution>
+				</executions>
+				<configuration>
+        			<release>8</release>
+        			<verbose>true</verbose>
+    			</configuration>
+			</plugin>
 		</plugins>
 	</build>
 

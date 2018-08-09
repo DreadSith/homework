@@ -3,11 +3,11 @@ package com.kg.projects.homework;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 
 
-public interface EntryRepository extends JpaRepository<Entry, Long> {
+public interface EntryRepository extends CrudRepository<Entry, Long> {
 	
 	@Query("FROM Entry ORDER BY date_posted DESC")
 	//@Query( value = "SELECT * FROM ENTRIES ORDER BY date_posted DESC", nativeQuery = true)
